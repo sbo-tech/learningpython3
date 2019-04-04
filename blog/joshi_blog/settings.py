@@ -25,7 +25,10 @@ SECRET_KEY = '5ne5+86+$e6fu4p9%4@&timml$+$9bp8pxb2cl-%8scz3k-#9s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+  'raspberrypi',
+]
+print('ACCESS over SSH => http://raspberrypi/admin')
 
 
 # Application definition
