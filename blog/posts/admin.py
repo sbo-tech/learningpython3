@@ -9,7 +9,7 @@ class PostAdminForm(forms.ModelForm):
 
         model = Post
         widgets = {
-            'text': forms.Textarea(attrs={'cols': 80, 'rows': 20}),
+            'text': forms.Textarea(attrs={'cols': 100, 'rows': 50}),
         }
 
 class PostAdmin(admin.ModelAdmin):

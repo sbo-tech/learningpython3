@@ -26,6 +26,7 @@ SECRET_KEY = '5ne5+86+$e6fu4p9%4@&timml$+$9bp8pxb2cl-%8scz3k-#9s'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+  'localhost',
   'raspberrypi',
 ]
 print('ACCESS over SSH => http://raspberrypi/admin')
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'posts',
 ]
 
