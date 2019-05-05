@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from . import Post
 from django.conf.urls import url, include
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
@@ -40,3 +41,15 @@ urlpatterns = [
   url(r'^', include(router.urls)),
   url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
+
+#Serializers defne the API representation
+class PostSerializer(seriaizers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Post
+        fields = ('url', 'title', 'content')
+#ViewSets define the view behavior.
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+#Routers provide an easy way of automatically determining the URL conf.
+router.register(r'posts', PostViewSet)
