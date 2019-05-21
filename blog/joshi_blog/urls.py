@@ -40,7 +40,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class PostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Post
-        fields = ('title', 'content')
+        fields = ('id','title', 'content')
 #ViewSets define the view behavior.
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
